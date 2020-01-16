@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+    web:
+        container_name: web
+        build: .
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./web/public:/var/www/html
+            - ./apache-conf/000-default.conf:/etc/apache2/sites-available/000-default.conf
+            - ./ssl-cert/sodafresh-priv-key:/ssl-cert/sodafresh-priv-key
+            - ./ssl-cert/sodafresh-full-chain:/ssl-cert/sodafresh-full-chain
+        networks:
+            - web-network
+
+networks:
+  web-network:
