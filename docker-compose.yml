@@ -2,7 +2,7 @@ version: "3.7"
 services:
     web:
         container_name: web
-        build: ./web-image-conf
+        build: ./web-docker-image-conf
         ports:
             - "80:80"
             - "443:443"
