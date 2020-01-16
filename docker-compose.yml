@@ -7,7 +7,7 @@ services:
             - "80:80"
             - "443:443"
         volumes:
-            - ./web/public:/var/www/html
+            - ./web:/var/www/html
             - ./apache-conf/000-default.conf:/etc/apache2/sites-available/000-default.conf
             - ./ssl-cert/priv_key.pem:/ssl-cert/priv_key.pem
             - ./ssl-cert/full_chain.pem:/ssl-cert/full_chain.pem
